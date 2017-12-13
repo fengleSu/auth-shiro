@@ -34,6 +34,11 @@ dependencies {
 	// shiro
 	compile "org.apache.shiro:shiro-core:1.4.0"
 	compile "org.apache.shiro:shiro-spring:1.4.0"
+    // db
+    compile 'org.mybatis.generator:mybatis-generator-core:1.3.5'
+    compile 'mysql:mysql-connector-java:6.0.6'
+    compile 'tk.mybatis:mapper:3.4.5'
+    compile 'org.mybatis:mybatis:3.4.5'
 
 	// mybatis generator
 	mybatisGenerator 'org.mybatis.generator:mybatis-generator-core:1.3.5'
@@ -56,6 +61,7 @@ task mybatisGenerate << {
     ant.properties['connectionURL'] = properties.getProperty("jdbc.url")
     ant.properties['username'] = properties.getProperty("jdbc.user")
     ant.properties['password'] = properties.getProperty("jdbc.pass")
+    ant.properties['schema'] = properties.getProperty("jdbc.schema")
     ant.properties['src_main_java'] = sourceSets.main.java.srcDirs[0].path
     ant.properties['src_main_resources'] = sourceSets.main.resources.srcDirs[0].path
     ant.properties['modelPackage'] = this.modelPackage
@@ -73,6 +79,7 @@ task mybatisGenerate << {
             propertyref(name: 'username')
             propertyref(name: 'driverClass')
             propertyref(name: 'connectionURL')
+            propertyref(name: 'schema')
             propertyref(name: 'password')
             propertyref(name: 'src_main_java')
             propertyref(name: 'src_main_resources')

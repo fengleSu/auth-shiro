@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.fl.auth.authshiro.dao.TRoleMapper">
+  <resultMap id="BaseResultMap" type="com.fl.auth.authshiro.entity.TRole">
+    <!--
+      WARNING - @mbg.generated
+    -->
+    <result column="n_id" jdbcType="INTEGER" property="nId" />
+    <result column="c_role_name" jdbcType="VARCHAR" property="cRoleName" />
+    <result column="n_create_user" jdbcType="INTEGER" property="nCreateUser" />
+    <result column="d_create_time" jdbcType="TIMESTAMP" property="dCreateTime" />
+    <result column="n_update_user" jdbcType="INTEGER" property="nUpdateUser" />
+    <result column="d_update_time" jdbcType="TIMESTAMP" property="dUpdateTime" />
+    <result column="n_delete" jdbcType="TINYINT" property="isDelete" />
+  </resultMap>
+</mapper>

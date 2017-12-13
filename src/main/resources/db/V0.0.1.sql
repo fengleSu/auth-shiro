@@ -3,7 +3,7 @@ CREATE TABLE `t_user` (
   `n_id` int(11) unsigned NOT NULL AUTO_INCREMENT COMMENT '主键',
   `c_username` varchar(20) NOT NULL COMMENT '用户名',
   `c_password` varchar(128) NOT NULL COMMENT '密码',
-  `c_salt` char(10) NOT NULL COMMENT '盐值',
+  `c_salt` varchar(10) NOT NULL COMMENT '盐值',
   `c_email` varchar(50) NOT NULL COMMENT '邮箱',
   `n_create_user` int(11) NOT NULL COMMENT '更新者',
   `d_create_time` datetime NOT NULL COMMENT '创建时间',
