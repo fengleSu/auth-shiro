@@ -64,7 +64,7 @@ public class TUser {
      * 是否删除
      */
     @Column(name = "n_delete")
-    private Boolean isDelete;
+    private Boolean delete;
 
     /**
      * 获取主键
@@ -233,16 +233,16 @@ public class TUser {
      *
      * @return n_delete - 是否删除
      */
-    public Boolean getIsDelete() {
-        return isDelete;
+    public Boolean getDelete() {
+        return delete;
     }
 
     /**
      * 设置是否删除
      *
-     * @param isDelete 是否删除
+     * @param delete 是否删除
      */
-    public void setIsDelete(Boolean isDelete) {
-        this.isDelete = isDelete;
+    public void setDelete(Boolean delete) {
+        this.delete = delete;
     }
 }

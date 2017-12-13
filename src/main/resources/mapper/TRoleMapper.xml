@@ -11,6 +11,6 @@
     <result column="d_create_time" jdbcType="TIMESTAMP" property="dCreateTime" />
     <result column="n_update_user" jdbcType="INTEGER" property="nUpdateUser" />
     <result column="d_update_time" jdbcType="TIMESTAMP" property="dUpdateTime" />
-    <result column="n_delete" jdbcType="TINYINT" property="isDelete" />
+    <result column="n_delete" jdbcType="TINYINT" property="delete" />
   </resultMap>
 </mapper>
