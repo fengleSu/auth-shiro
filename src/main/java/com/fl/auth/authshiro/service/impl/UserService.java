@@ -24,22 +24,27 @@ public class UserService implements IUserService {
         if(StringUtils.isEmpty(email)){
             userVo.setResult(Result.INVALID);
             userVo.setValidation(ValidateMessage.EMAIL_EMPTY);
+            return userVo;
         }
         if(StringUtils.isEmpty(username)){
             userVo.setResult(Result.INVALID);
             userVo.setValidation(ValidateMessage.USERNAME_EMPTY);
+            return userVo;
         }
         if(StringUtils.isEmpty(password)){
             userVo.setResult(Result.INVALID);
             userVo.setValidation(ValidateMessage.PASSWORD_EMPTY);
+            return userVo;
         }
         if(StringUtils.isEmpty(repassword)){
             userVo.setResult(Result.INVALID);
             userVo.setValidation(ValidateMessage.REPASSWORD_EMPTY);
+            return userVo;
         }
         if(!StringUtils.equals(password,repassword)){
             userVo.setResult(Result.INVALID);
             userVo.setValidation(ValidateMessage.PASSWORD_INCONSISTENT);
+            return userVo;
         }
         TUser user = new TUser();
         user.setcUsername(username);
@@ -67,6 +72,7 @@ public class UserService implements IUserService {
         if(existUser == null){
             userVo.setResult(Result.INVALID);
             userVo.setValidation(ValidateMessage.USER_NOT_EXIST);
+            return userVo;
         }
         userVo.setResult(Result.SUCCESS);
         userVo.setUsername(existUser.getcUsername());
