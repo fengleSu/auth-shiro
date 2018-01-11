@@ -23,7 +23,7 @@
         <javaClientGenerator targetPackage="${mapperPackage}" targetProject="${src_main_java}" type="XMLMAPPER"/>
         <!-- 用户表 -->
         <table tableName="t_user" domainObjectName="TUser" mapperName="TUserMapper">
-            <generatedKey column="n_id" sqlStatement="Mysql" identity="true"/>
+            <generatedKey column="n_id" sqlStatement="Mysql" identity="true" type=""/>
             <columnOverride column="n_delete" javaType="java.lang.Boolean" jdbcType="TINYINT" property="delete"/>
         </table>
 

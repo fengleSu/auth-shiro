@@ -19,7 +19,7 @@ public class UserService implements IUserService {
     private TUserMapper userMapper;
 
     @Override
-    public UserVo regist(String email, String username, String password, String repassword, Integer userId) {
+    public UserVo regist(String email, String username, String password, String repassword) {
         UserVo userVo = new UserVo();
         if(StringUtils.isEmpty(email)){
             userVo.setResult(Result.INVALID);
@@ -51,9 +51,9 @@ public class UserService implements IUserService {
         user.setcPassword(password);
         user.setcSalt("SALT");
         user.setcEmail(email);
-        user.setnCreateUser(userId);
+        user.setnCreateUser(0);
         user.setdCreateTime(new Date());
-        user.setnUpdateUser(userId);
+        user.setnUpdateUser(0);
         user.setdUpdateTime(new Date());
         user.setDelete(false);
         userMapper.insert(user);
@@ -76,6 +76,24 @@ public class UserService implements IUserService {
         }
         userVo.setResult(Result.SUCCESS);
         userVo.setUsername(existUser.getcUsername());
+        return userVo;
+    }
+
+    @Override
+    public UserVo getUser(String username) {
+        UserVo userVo = new UserVo();
+        TUser user = new TUser();
+        user.setcUsername(username);
+        TUser existUser =  userMapper.selectOne(user);
+        if(existUser == null){
+            userVo.setResult(Result.INVALID);
+            userVo.setValidation(ValidateMessage.USER_NOT_EXIST);
+            return userVo;
+        }
+        userVo.setResult(Result.SUCCESS);
+        userVo.setUsername(existUser.getcUsername());
+        userVo.setPassword(existUser.getcPassword());
+        userVo.setSalt(existUser.getcSalt());
         return userVo;
     }
 }

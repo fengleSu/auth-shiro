@@ -17,8 +17,22 @@ public enum ValidateMessage {
     REPASSWORD_REGEX_WRONG(111,"重复密码格式错误"),
     REPASSWORD_TOO_LONG(112,"重复密码过长"),
 
+    ROLE_NAME_EMPTY(121,"角色名称为空"),
+    ROLE_NAME_TOO_LONG(122,"角色名称为空"),
+    ROLE_NAME_REGEX_WRONG(123,"角色格式错误"),
+    OPERATOR_EMPTY(123,"操作人为空"),
+    ROLE_ID_NULL(124,"角色ID为空"),
+
+
+
+
     PASSWORD_INCONSISTENT(201,"两次输入密码不一致"),
-    USER_NOT_EXIST(202,"用户不存在");
+    USER_NOT_EXIST(202,"用户不存在"),
+
+    OPERATOR_NOT_EXIST(213,"操作用户不存在"),
+    ROLE_NOT_EXIST(214,"角色不存在"),
+    USER_HAS_ROLE(215,"用户已经存在该角色");
+
 
     private int code;
 

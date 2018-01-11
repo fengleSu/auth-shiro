@@ -8,6 +8,7 @@ public class TRole {
     /**
      * 主键
      */
+    @Id
     @Column(name = "n_id")
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Integer nId;

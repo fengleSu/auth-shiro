@@ -69,4 +69,20 @@ public class UserServiceTest {
         Assert.assertEquals(successVo.getResult(), Result.SUCCESS);
         Assert.assertNull(successVo.getValidation());
     }
+
+    /**
+     *  根据用户名获取用户信息
+     */
+    @Test
+    public void testGetUser(){
+        // 用户不存在
+        UserVo userNotExistVo = userService.getUser("644930725@qq.com");
+        Assert.assertEquals(userNotExistVo.getResult(), Result.INVALID);
+        Assert.assertEquals(userNotExistVo.getValidation(), ValidateMessage.USER_NOT_EXIST);
+
+        // 用户存在
+        UserVo successVo = userService.login("fengle","fengle");
+        Assert.assertEquals(successVo.getResult(), Result.SUCCESS);
+        Assert.assertNull(successVo.getValidation());
+    }
 }

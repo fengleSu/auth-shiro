@@ -8,6 +8,7 @@ public class TPermission {
     /**
      * 主键id
      */
+    @Id
     @Column(name = "n_id")
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Integer nId;
